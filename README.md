@@ -1,6 +1,6 @@
-# Tapo RV30 Robot Vacuum — Home Assistant Integration
+# Tapo RV20 Robot Vacuum — Home Assistant Integration
 
-Local-only Home Assistant integration for the **TP-Link Tapo RV30 Max Plus** robot vacuum.
+Local-only Home Assistant integration for the **TP-Link Tapo RV20 Max Plus** robot vacuum.
 
 Implements the **TPAP / SPAKE2+** authentication protocol reverse-engineered from [python-kasa PR #1592](https://github.com/python-kasa/python-kasa/pull/1592).
 No cloud dependency — communicates directly with the vacuum over your LAN.
@@ -31,8 +31,8 @@ With help from Claude the RV30C Mop is now supported using the **AES** authentic
 
 ## Installation
 
-1. https://github.com/DoctorMod/tapo-rv30
-2. Copy the custom_components/tapo-rv30 folder into your Home Assistant config/custom_components/ directory, so you end up with config/custom_components/tapo-rv30/.
+1. https://github.com/DoctorMod/tapo-rv20
+2. Copy the custom_components/tapo-rv20 folder into your Home Assistant config/custom_components/ directory, so you end up with config/custom_components/tapo-rv20/.
 3. Restart Home Assistant.
 
 ## Supported Models

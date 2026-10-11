@@ -1,6 +1,6 @@
 {
   "domain": "tapo_rv20",
-  "name": "Tapo RV20 or RV30 Robot Vacuum",
+  "name": "Tapo Robot Vacuum",
   "version": "v0.1.5",
   "documentation": "https://github.com/doctor_mod/tapo-rv20",
   "issue_tracker": "https://github.com/doctor_mod/tapo-rv20/issues",
