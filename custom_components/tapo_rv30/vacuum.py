@@ -5,6 +5,7 @@ import logging
 from typing import Any
 
 from homeassistant.components.vacuum import (
+    Segment,
     StateVacuumEntity,
     VacuumEntityFeature,
 )
@@ -33,6 +34,7 @@ _FEATURES = (
     | VacuumEntityFeature.FAN_SPEED
     | VacuumEntityFeature.STATE
     | VacuumEntityFeature.MAP
+    | VacuumEntityFeature.CLEAN_AREA
 )
 # NOTE: VacuumEntityFeature.BATTERY (and the battery_level/battery_icon
 # entity properties) were deprecated in HA Core 2025.8 and are removed in
@@ -121,4 +123,24 @@ class TapoVacuumEntity(CoordinatorEntity[TapoCoordinator], StateVacuumEntity):
             _LOGGER.error("Unknown fan speed: %s", fan_speed)
             return
         await self.hass.async_add_executor_job(self.coordinator.client.set_fan_speed, value)
+        await self.coordinator.async_request_refresh()
+
+    async def async_get_segments(self) -> list[Segment]:
+        """Return the rooms available for Home Assistant area cleaning."""
+        return [
+            Segment(id=str(room["id"]), name=_b64name(room.get("name", "")))
+            for room in self.coordinator.rooms
+            if room.get("id") is not None
+        ]
+
+    def clean_segments(self, segment_ids: list[str], **kwargs: Any) -> None:
+        """Start a cleaning run for the selected map rooms."""
+        map_id, _ = self.coordinator.client.get_map_info()
+        room_ids = [int(segment_id) for segment_id in segment_ids]
+        self.coordinator.client.clean_rooms(room_ids, map_id)
+
+    async def async_clean_segments(
+        self, segment_ids: list[str], **kwargs: Any
+    ) -> None:
+        await self.hass.async_add_executor_job(self.clean_segments, segment_ids)
         await self.coordinator.async_request_refresh()

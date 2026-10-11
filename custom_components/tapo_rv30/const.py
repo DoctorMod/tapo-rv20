@@ -1,5 +1,5 @@
-"""Constants for Tapo RV30 integration."""
-DOMAIN = "tapo_rv30"
+"""Constants for Tapo RV20 or RV30 integration."""
+DOMAIN = "tapo_rv20"
 
 CONF_HOST     = "host"
 CONF_USERNAME = "username"

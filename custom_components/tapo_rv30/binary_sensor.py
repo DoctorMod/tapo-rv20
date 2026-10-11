@@ -1,4 +1,4 @@
-"""Binary sensor entities for Tapo RV30 — generic bridge for any
+"""Binary sensor entities for Tapo RV20 or RV30 — generic bridge for any
 python-kasa Feature of type BinarySensor (e.g. Overheated).
 
 AES transport only. On TPAP-transport installs, coordinator.feature_

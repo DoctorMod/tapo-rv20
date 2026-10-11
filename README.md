@@ -10,7 +10,7 @@ With help from Claude the RV30C Mop is now supported using the **AES** authentic
 ## Features
 
 - Full vacuum control — start, pause, stop, dock
-- **Room-by-room cleaning** via `tapo_rv30.clean_rooms` service
+- **Room-by-room cleaning** via the standard `vacuum.clean_area` service
 - Fan speed selection (Quiet / Standard / Turbo / Max / Ultra)
 - Water level select (Off / Low / Medium / High)
 - Clean passes select (1 / 2 / 3)
@@ -48,19 +48,19 @@ Should work on any Tapo RobovAC using AES / TPAP.
 ```
 alias: Bonnie - Clean All Rooms
 sequence:
-  - action: tapo_rv30.clean_rooms
+  - action: vacuum.clean_area
     target:
       entity_id: vacuum.bonnie
     data:
-      rooms:
-        - Lounge
-        - Utility Room
-        - Kitchen
-        - Dining Room
-        - Bathroom
-        - Entrance
+      cleaning_area_id:
+        - lounge
+        - utility_room
+        - kitchen
+        - dining_room
+        - bathroom
+        - entrance
 mode: single
-description: Triggers the vacuum to clean all areas downstairs.
+description: Triggers the vacuum to clean the selected Home Assistant areas.
 ```
 
 **Dashboard Button**

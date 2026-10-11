@@ -1,4 +1,4 @@
-"""Number entities for Tapo RV30 — generic bridge for any python-kasa
+"""Number entities for Tapo RV20 or RV30 — generic bridge for any python-kasa
 Feature of type Number. (clean_count is excluded here since it's already
 exposed as the "Clean Passes" select entity — this platform picks up any
 other numeric config values the device negotiates.)

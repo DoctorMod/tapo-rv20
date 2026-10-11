@@ -1,4 +1,4 @@
-"""Config flow for Tapo RV30.
+"""Config flow for Tapo RV20 or RV30.
 
 Auto-detects which transport the device actually speaks:
   - TPAP/SPAKE2+ (newer RV30 Max Plus / RV20 Max Plus firmware), or
@@ -79,7 +79,7 @@ class TapoRV30ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 errors["base"] = err
             else:
                 return self.async_create_entry(
-                    title=f"Tapo RV30 ({host})",
+                    title=f"Tapo RV20 ({host})",
                     data={
                         CONF_HOST: host,
                         CONF_USERNAME: user,

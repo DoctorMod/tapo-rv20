@@ -1,4 +1,4 @@
-"""Select entities for Tapo RV30 — water level and clean passes."""
+"""Select entities for Tapo RV20 or RV30 — water level and clean passes."""
 from __future__ import annotations
 
 import logging

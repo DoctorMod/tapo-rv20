@@ -1,4 +1,4 @@
-"""Switch entities for Tapo RV30 — generic bridge for any python-kasa
+"""Switch entities for Tapo RV20 or RV30 — generic bridge for any python-kasa
 Feature of type Switch (e.g. Carpet boost, Child lock).
 
 AES transport only — see binary_sensor.py for the same note.

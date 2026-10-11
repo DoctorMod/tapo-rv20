@@ -1,4 +1,4 @@
-"""Camera entity serving the rendered map image for Tapo RV30."""
+"""Camera entity serving the rendered map image for Tapo RV20 or RV30."""
 from __future__ import annotations
 
 import logging
@@ -29,7 +29,7 @@ class TapoMapCamera(CoordinatorEntity[TapoCoordinator], Camera):
     _attr_is_streaming    = False
     _attr_is_recording    = False
     _attr_brand           = "TP-Link"
-    _attr_model           = "Tapo RV30 Map"
+    _attr_model           = "Tapo RV20 Map"
     content_type          = "image/png"
 
     def __init__(self, coordinator: TapoCoordinator, entry: ConfigEntry) -> None:

@@ -1,4 +1,4 @@
-"""TPAP SPAKE2+ transport and vacuum client for Tapo RV30."""
+"""TPAP SPAKE2+ transport and vacuum client for Tapo RV20 or RV30."""
 from __future__ import annotations
 
 import base64

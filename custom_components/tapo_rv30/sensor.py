@@ -1,4 +1,4 @@
-"""Sensor entities for Tapo RV30."""
+"""Sensor entities for Tapo RV20 or RV30."""
 from __future__ import annotations
 
 import logging
@@ -160,7 +160,7 @@ class TapoRoomsSensor(CoordinatorEntity[TapoCoordinator], SensorEntity):
     State is a comma-separated list of room names (what you actually
     want to see at a glance in the entity list); extra_state_attributes
     carries the same data structured for templates/scripts — a plain
-    list, and an id→name mapping to help construct clean_rooms calls.
+    list, and an id→name mapping for troubleshooting segment mappings.
     """
     _attr_has_entity_name = True
     _attr_name             = "Rooms"
