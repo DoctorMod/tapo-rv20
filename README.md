@@ -31,7 +31,7 @@ With help from Claude the RV30C Mop is now supported using the **AES** authentic
 
 ## Installation
 
-1. https://github.com/peggleg/tapo-rv30
+1. https://github.com/DoctorMod/tapo-rv30
 2. Copy the custom_components/tapo-rv30 folder into your Home Assistant config/custom_components/ directory, so you end up with config/custom_components/tapo-rv30/.
 3. Restart Home Assistant.
 
